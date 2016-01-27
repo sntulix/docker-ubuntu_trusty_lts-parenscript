@@ -17,3 +17,14 @@ docker build --tag=local/ubuntu_vivid-parenscript docker-ubuntu_vivid-quicksbcl
 docker run -ti local/ubuntu_vivid-parenscript /bin/bash
 sbcl --eval '(ql:quickload :parenscript)'
 ```
+
+#Installed commands
+* bzip2
+* curl
+* git
+* make
+* node.js v4.2.6
+* nvm
+* vim
+* tmux
+* wget
