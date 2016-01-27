@@ -1,7 +1,15 @@
-Quicksbcl Dockerfile
+Parenscript Dockerfile
 ====================
 
-This repository contains Dockerfile of Quicksbcl for Docker's automated build.
+This repository contains Dockerfile of Parenscript for Docker's automated build.
 
-It is based on the repository [davazp/sbcl](https://github.com/davazp/docker-sbcl),
-which is augmented with [Quicklisp](http://www.quicklisp.org/).
+It was made with reference to the repository [davazp/docker-quicksbcl](https://github.com/davazp/docker-quicksbcl),
+
+#How to build docker image
+
+1. git clone 
+2. docker build --tag=local/ubuntu_vivid-parenscript docker-ubuntu_vivid-quicksbcl
+
+#How to use parenscript
+1. docker run -ti local/ubuntu_vivid-parenscript /bin/bash
+2. sbcl --eval '(ql:quickload :parenscript)'
