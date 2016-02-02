@@ -9,7 +9,7 @@ It was made with reference to the repository [davazp/docker-quicksbcl](https://g
 
 ```
 git clone 
-docker build --tag=local/ubuntu_vivid-parenscript docker-ubuntu_vivid-quicksbcl
+docker build --tag=local/ubuntu_vivid-parenscript docker-ubuntu_vivid-parenscript
 ```
 
 #How to use parenscript
