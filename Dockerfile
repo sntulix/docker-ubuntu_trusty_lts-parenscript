@@ -1,4 +1,4 @@
-FROM ubuntu:vivid
+FROM ubuntu:15.10
 MAINTAINER Takahiro Shizuki <shizu@futuregadget.com>
 
 # Install dependencies from Debian repositories
