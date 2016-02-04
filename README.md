@@ -36,7 +36,7 @@ sbcl --eval '(ql:quickload :parenscript)'
 * parenscript
 * psmisc
 * python-appindicator
-* sbcl
+* sbcl v1.3.1
 * tmux
 * vim
 * vim-gtk
