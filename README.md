@@ -21,11 +21,9 @@ sbcl --eval '(ql:quickload :parenscript)'
 #Installed packages
 * bzip2
 * curl
-* dbus-x11
 * emacs.spacemacs
 * git
 * leafpad
-* ibus
 * make
 * man
 * node.js v4.2.6
@@ -43,6 +41,7 @@ sbcl --eval '(ql:quickload :parenscript)'
 
 # option packages (commentout)
 * ja-packages
+  * dbus-x11
   * fonts-ipafont-gothic
   * ibus-anthy
   * language-pack-ja
