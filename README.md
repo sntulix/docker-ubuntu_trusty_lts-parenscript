@@ -18,17 +18,14 @@ docker run -ti local/ubuntu_trusty_lts-parenscript /bin/bash
 sbcl --eval '(ql:quickload :parenscript)'
 ```
 
-#Installed commands
+#Installed packages
 * bzip2
 * curl
 * dbus-x11
 * emacs.spacemacs
-* fonts-ipafont-gothic
 * git
-* ibus-anthy
-* language-pack-ja
-* language-pack-ja-base
 * leafpad
+* ibus
 * make
 * man
 * node.js v4.2.6
@@ -43,3 +40,10 @@ sbcl --eval '(ql:quickload :parenscript)'
 * wget
 * xfce4-terminal
 * xterm
+
+# option packages (commentout)
+* ja-packages
+  * fonts-ipafont-gothic
+  * ibus-anthy
+  * language-pack-ja
+  * language-pack-ja-base
