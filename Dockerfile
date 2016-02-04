@@ -3,8 +3,10 @@ MAINTAINER Takahiro Shizuki <shizu@futuregadget.com>
 
 ENV HOME /root
 
+# set package repository mirror
+#RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
+
 # Install dependencies
-RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
 RUN apt-get update -o Acquire::ForceIPv4=true
 RUN apt-get install -y bzip2 curl git make man psmisc tmux vim wget
 RUN apt-get clean
