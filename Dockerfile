@@ -10,23 +10,29 @@ RUN apt-get install -y bzip2 curl git make man psmisc tmux vim wget
 RUN apt-get clean
 
 
-# install japanese pack
+# install x window relations
+RUN apt-get update
+RUN apt-get -y install dbus-x11 ibus python-appindicator xterm xfce4-terminal leafpad emacs vim-gtk
+RUN apt-get clean
+
+ENV GTK_IM_MODULE ibus
+ENV QT_IM_MODULE ibus
+ENV XMODIFIERS @im=ibus
+RUN echo "ibus-daemon -drx" >> ~/.bashrc
+
+
+# install japanese packages
 RUN wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | apt-key add -
 RUN wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | apt-key add -
 RUN wget https://www.ubuntulinux.jp/sources.list.d/wily.list -O /etc/apt/sources.list.d/ubuntu-ja.list
 RUN apt-get update
-RUN apt-get -y install language-pack-ja-base language-pack-ja fonts-ipafont-gothic dbus-x11 ibus-anthy python-appindicator xterm xfce4-terminal leafpad emacs vim-gtk
+RUN apt-get -y install language-pack-ja-base language-pack-ja fonts-ipafont-gothic ibus-anthy
 RUN update-locale LANG=ja_JP.UTF-8 LANGUAGE=ja_JP:ja
 RUN apt-get clean
 
 ENV LANG ja_JP.UTF-8
 ENV LC_ALL ja_JP.UTF-8
 ENV LC_CTYPE ja_JP.UTF-8
-
-ENV GTK_IM_MODULE ibus
-ENV QT_IM_MODULE ibus
-ENV XMODIFIERS @im=ibus
-RUN echo "ibus-daemon -drx" >> ~/.bashrc
 
 
 # Install spacemacs
