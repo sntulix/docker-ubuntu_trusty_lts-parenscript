@@ -41,4 +41,5 @@ sbcl --eval '(ql:quickload :parenscript)'
 * vim
 * vim-gtk
 * wget
+* xfce4-terminal
 * xterm
