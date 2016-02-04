@@ -14,7 +14,10 @@ docker build --tag=local/ubuntu_trusty_lts-parenscript docker-ubuntu_trusty_lts-
 
 #How to use parenscript
 ```
-docker run -ti local/ubuntu_trusty_lts-parenscript /bin/bash
+#
+#docker run -ti --rm -e DISPLAY=192.168.99.1:0 -v /c/Users/xyz:/mnt/home local/ubuntu_trusty_lts-parenscript /bin/bash
+#docker run -ti --rm -e DISPLAY=192.168.99.1:0 local/ubuntu_trusty_lts-parenscript /bin/bash
+docker run -ti --rm local/ubuntu_trusty_lts-parenscript /bin/bash
 sbcl --eval '(ql:quickload :parenscript)'
 ```
 
