@@ -2,6 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER Takahiro Shizuki <shizu@futuregadget.com>
 
 ENV HOME /root
+ENV SHELL /bin/bash
 
 # set package repository mirror
 #RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
@@ -13,8 +14,19 @@ RUN apt-get clean
 
 
 # install x window relations
-RUN apt-get -y install python-appindicator xterm xfce4-terminal leafpad emacs vim-gtk
+RUN apt-get -y install python-appindicator xterm xfce4-terminal leafpad vim-gtk
 RUN apt-get clean
+
+
+#install Emacs24.5
+RUN apt-get -y install build-essential
+RUN apt-get -y build-dep emacs24
+RUN mkdir -p /root/src
+WORKDIR /root/src
+RUN wget http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz
+RUN tar -xf emacs-24.5.tar.*
+WORKDIR /root/src/emacs-24.5
+RUN ./configure && make && make install
 
 
 # install japanese packages
