@@ -22,10 +22,12 @@ sbcl --eval '(ql:quickload :parenscript)'
 ```
 
 #Installed packages
+* build-essential
 * bzip2
 * curl
-* emacs.spacemacs
+* emacs24.5.spacemacs
 * git
+* gnutls28
 * leafpad
 * make
 * man
