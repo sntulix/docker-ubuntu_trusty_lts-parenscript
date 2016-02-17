@@ -25,9 +25,9 @@ sbcl --eval '(ql:quickload :parenscript)'
 * add-apt-repository
 * bzip2
 * curl
-* emacs24.5.spacemacs
+* emacs v24.5 +spacemacs
 * gcc/g++
-* git
+* git (latest)
 * gnutls28
 * leafpad
 * make
