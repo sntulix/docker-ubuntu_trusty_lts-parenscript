@@ -12,6 +12,11 @@ RUN apt-get update -o Acquire::ForceIPv4=true
 RUN apt-get install -y bzip2 curl git libgnutls28 man psmisc software-properties-common tmux vim wget
 RUN apt-get clean
 
+# Install git latest
+RUN add-apt-repository -y ppa:git-core/ppa
+RUN apt-get update -o Acquire::ForceIPv4=true
+RUN apt-get install -y git
+
 
 # install x window relations
 RUN apt-get -y install python-appindicator xterm xfce4-terminal leafpad vim-gtk
