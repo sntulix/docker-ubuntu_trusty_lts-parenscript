@@ -8,7 +8,7 @@ ENV HOME /root
 
 # Install dependencies
 RUN apt-get update -o Acquire::ForceIPv4=true
-RUN apt-get install -y bzip2 curl git make man psmisc tmux vim wget
+RUN apt-get install -y bzip2 curl git libgnutls28 make man psmisc tmux vim wget
 RUN apt-get clean
 
 
