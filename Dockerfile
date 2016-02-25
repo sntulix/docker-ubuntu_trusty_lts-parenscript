@@ -65,19 +65,18 @@ RUN /bin/bash -c 'source /root/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm u
 
 
 # Install SBCL from the tarball binaries.
-RUN wget http://prdownloads.sourceforge.net/sbcl/sbcl-1.3.1-x86-64-linux-binary.tar.bz2	 -O /tmp/sbcl.tar.bz2 \
-&&    mkdir /tmp/sbcl \
-&&    tar jxvf /tmp/sbcl.tar.bz2 --strip-components=1 -C /tmp/sbcl/ \
-&&    cd /tmp/sbcl \
+RUN wget http://prdownloads.sourceforge.net/sbcl/sbcl-1.3.1-x86-64-linux-binary.tar.bz2	 -O /root/src/sbcl.tar.bz2 \
+&&    mkdir /root/src/sbcl \
+&&    tar jxvf /root/src/sbcl.tar.bz2 --strip-components=1 -C /root/src/sbcl/ \
+&&    cd /root/src/sbcl \
 &&    sh install.sh \
-&&    cd /tmp \
-&&    rm -rf /tmp/sbcl/
+&&    rm -rf /root/src/sbcl/
 
-WORKDIR /tmp/
+WORKDIR /root/src/sbcl
 RUN wget http://beta.quicklisp.org/quicklisp.lisp
-ADD install.lisp /tmp/install.lisp
+ADD install.lisp /root/src/sbcl/install.lisp
 
-RUN sbcl --non-interactive --load /tmp/install.lisp
+RUN sbcl --non-interactive --load /root/src/sbcl/install.lisp
 
 
 # OpenGL env
